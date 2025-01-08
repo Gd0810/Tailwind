@@ -5,3 +5,6 @@
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Node modules
+node_modules
