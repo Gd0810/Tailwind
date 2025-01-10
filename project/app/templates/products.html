@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for itam in products %}
+    <h1>{{ itam.name }}</h1>
+    <a href="{% url "subproducts" itam.id %} ">more products</a>
+    {% endfor %}
+  
+
+    {% comment %} {% for item in products %}
+    <h1>{{ item.name }}</h1>
+    {% endfor %}
+    <h1>{{ products }}</h1> {% endcomment %}
+
+   
+    
+</body>
+</html>

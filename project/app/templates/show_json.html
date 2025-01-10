@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Data Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Stored JSON Data</h1>
+        {% for obj in objects %}
+            <div class="card">
+                <h2>{{ obj.name }}</h2>
+                <p><strong>Age:</strong> {{ obj.data.age }}</p>
+                <p><strong>Email:</strong> {{ obj.data.email }}</p>
+                <p><strong>City:</strong> {{ obj.data.address.city|default:"N/A" }}</p>
+                <p><strong>Street:</strong> {{ obj.data.address.street|default:"N/A" }}</p>
+                <p><strong>city</strong> {{ obj.data.address.city|default:"N/A" }}</p>
+                <p><strong>zip:</strong> {{ obj.data.address.zipcode|default:"N/A" }}</p>
+
+            </div>
+        {% empty %}
+            <p>No data available.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
